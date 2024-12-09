@@ -1,0 +1,54 @@
+{
+  "spacing": 4,
+
+  "height": 35,
+  "margin": "10 10 0 10",
+
+  "modules-left": ["hyprland/window"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["custom/pacman", "wireplumber", "cpu", "memory", "clock"],
+  
+  "reload_style_on_change": true,
+
+  "hyprland/window": {
+    // "format": "{}",
+    "max-length": 80
+  },
+
+  "hyprland/workspaces": {
+    "active-only": false,
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    // "format": "{name}",
+    "persistent-workspaces": {
+      "*": 4
+    }
+  },
+
+  "cpu": {
+    "format": "{usage}% "
+    // "tooltip": false
+  },
+
+  "memory": {
+    "format": "{}% "
+  },
+
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}"
+  },
+
+  "wireplumber": {
+    "format": "{volume}% {icon}",
+    "format-muted": "",
+    "scroll-step": 0.2,
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-right": "hyprctl dispatch 'exec [float] helvum'",
+    "format-icons": ["", "", ""]
+  },
+
+
+  // TODO: https://github.com/Alexays/Waybar/wiki/Module:-Cava
+}
